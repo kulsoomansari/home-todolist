@@ -4,8 +4,8 @@ import { addTodo } from './store/CounterSlice'
 import TodoList from './TodoList'
 
 function AddTodo() {
-const [title, settitle] = useState("")
 const dispatch = useDispatch()
+const [title, settitle] = useState()
 const handleChange = (e) =>{
 settitle(e.target.value)
 }
@@ -17,8 +17,8 @@ const handleSubmit = (e) =>{
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input value={title} type="text" name="text" onChange={handleChange}/>
-                <button>Add</button>
+                <input value={title} type="text" name="title" onChange={handleChange}/>
+                <button type="submit">Add</button>
             </form>
             <TodoList />
         </div>

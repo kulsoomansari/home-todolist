@@ -18,9 +18,20 @@ import { createSlice,nanoid } from "@reduxjs/toolkit";
             }    
           }
         }
+    },
+    deleteTodo: {
+        reducer(state, action){
+        },
+        prepare(id){
+            return{
+                payload: {
+                id: {id},
+            }    
+          }
+        }
     }
     }
 })
-export const {addTodo} = todoSlice.actions
+export const {addTodo, deleteTodo} = todoSlice.actions
 const todoReducer = todoSlice.reducer
 export default todoReducer

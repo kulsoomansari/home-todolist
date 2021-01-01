@@ -1,15 +1,21 @@
 import React from 'react'
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 
 function TodoList() {
 const state = useSelector(state => state.todolist)
+const dispatch = useDispatch()
+console.log(state)
+// const handleDelete = () =>{
+//     dispatch()
+// }
     return (
-        <div>
+        <>
            {state.map((todo)=>(
-           <div key={todo.id}>{todo.title}</div>
-               
+           <div key={todo.id}>{todo.title}
+           {/* <button type="submit" onClick={()=>handleDelete(id)}>X</button> */}
+           </div>              
     ))} 
-        </div>
+        </>
     )
 }
 
